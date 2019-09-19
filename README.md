@@ -5,3 +5,7 @@
 ## Introduction
 
 Bob allows you to use the power of CSS Grid declaratively with a set of classes. Perfect for quickly prototyping complex layout.
+
+## Demo
+
+[View demo](https://antoinechassagne.github.io/bob/)
