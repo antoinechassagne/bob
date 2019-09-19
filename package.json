@@ -1,0 +1,19 @@
+{
+  "name": "bob",
+  "version": "0.0.1",
+  "description": "Bob is a CSS grid layout framework.",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2"
+  },
+  "scripts": {
+    "build": "gulp"
+  },
+  "author": "Auguste Couecou (Github : @augcouec) & Antoine Chassagne (Github : @antoinechassagne)",
+  "license": "ISC"
+}

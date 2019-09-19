@@ -1,0 +1,66 @@
+/**
+* GRID
+*/
+
+// Grid classes
+.grid {
+  display: grid;
+  grid-template-columns: repeat($bob-columns, 1fr);
+  grid-gap: $bob-gap;
+}
+
+.no-gap {
+  grid-gap: 0;
+}
+
+@each $breakpoint-suffix, $breakpoint-value in $bob-breakpoints {
+  // Column classes
+  @for $i from 1 through $bob-columns {
+    // Column start
+    .col-start-#{$i}#{$breakpoint-suffix}, .cs-#{$i}#{str-slice($breakpoint-suffix, 1, 2)} {
+      @if ($breakpoint-value == 0) {
+        grid-column-start: $i;
+      } @else {
+        @media (min-width: #{$breakpoint-value}px) {
+          grid-column-start: $i;
+        }
+      }
+    }
+
+    // Column end
+    .col-end-#{$i}#{$breakpoint-suffix}, .ce-#{$i}#{str-slice($breakpoint-suffix, 1, 2)} {
+      @if ($breakpoint-value == 0) {
+        grid-column-end: ($i +1);
+      } @else {
+        @media (min-width: #{$breakpoint-value}px) {
+          grid-column-end: ($i +1);
+        }
+      }
+    }
+  }
+
+  // Row classes
+  @for $i from 1 through $bob-rows {
+    // Row start
+    .row-start-#{$i}#{$breakpoint-suffix}, .rs-#{$i}#{str-slice($breakpoint-suffix, 1, 2)} {
+      @if ($breakpoint-value == 0) {
+        grid-row-start: $i;
+      } @else {
+        @media (min-width: #{$breakpoint-value}px) {
+          grid-row-start: $i;
+        }
+      }
+    }
+
+    // Row end
+    .row-end-#{$i}#{$breakpoint-suffix}, .re-#{$i}#{str-slice($breakpoint-suffix, 1, 2)} {
+      @if ($breakpoint-value == 0) {
+        grid-row-end: ($i +1);
+      } @else {
+        @media (min-width: #{$breakpoint-value}px) {
+          grid-row-end: ($i +1);
+        }
+      }
+    }
+  }
+}

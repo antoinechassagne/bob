@@ -1,0 +1,25 @@
+/**
+* CONFIG
+*
+* Here you can configure the grid for your needs.
+*/
+
+// Define the number of columns
+$bob-columns: 12;
+
+// Define the number of rows
+$bob-rows: 12;
+
+// Define the grid gap
+$bob-gap: 1em;
+
+// Define the breakpoints
+// Key is the classe suffix
+// Value is the media queries min-width (in px)
+$bob-breakpoints: (
+  '': 0, // Keep this line as it
+  '-tablet': 768,
+  '-desktop': 992,
+  '-large': 1200
+);
+

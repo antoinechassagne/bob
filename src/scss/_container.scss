@@ -1,0 +1,20 @@
+/**
+* CONTAINER
+*/
+
+$bob-container-medias: (
+  768: 720, 
+  992: 960, 
+  1200: 1140
+);
+
+.container {
+  width: 100%;
+  margin: auto;
+
+  @each $breakpoint, $max-width in $bob-container-medias {
+    @media (min-width: #{$breakpoint}px) {
+      max-width: #{$max-width}px;
+    }
+  }
+}
