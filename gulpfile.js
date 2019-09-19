@@ -26,4 +26,10 @@ gulp.task('minify', () => {
       .pipe(gulp.dest('dist/css'))
 });
 
-gulp.task('default', gulp.series(['clean', 'compile', 'minify']));
+gulp.task('docs', () => {
+  return gulp.src('dist/css/main.min.css')
+      .pipe(gulp.dest('docs/'))
+});
+
+gulp.task('build', gulp.series(['clean', 'compile', 'minify']));
+gulp.task('docs', gulp.series(['docs']));

@@ -12,7 +12,8 @@
     "gulp-sass": "^4.0.2"
   },
   "scripts": {
-    "build": "gulp"
+    "build": "gulp build",
+    "build:docs": "gulp docs"
   },
   "author": "Auguste Couecou (Github : @augcouec) & Antoine Chassagne (Github : @antoinechassagne)",
   "license": "ISC"
