@@ -8,10 +8,12 @@ $bob-container-medias: (
   1200: 1140
 );
 
-.container {
+.container, .container-full {
   width: 100%;
   margin: auto;
+}
 
+.container {
   @each $breakpoint, $max-width in $bob-container-medias {
     @media (min-width: #{$breakpoint}px) {
       max-width: #{$max-width}px;
