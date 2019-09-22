@@ -2,7 +2,7 @@
 * GRID
 */
 
-// Grid classes
+// Grid
 .grid {
   display: grid;
   grid-template-columns: repeat($bob-columns, 1fr);
@@ -14,53 +14,57 @@
   grid-gap: 0;
 }
 
-@each $breakpoint-suffix, $breakpoint-value in $bob-breakpoints {
-  // Column classes
-  @for $i from 1 through $bob-columns {
-    // Column start
-    .col-start-#{$i}#{$breakpoint-suffix}, .cs-#{$i}#{str-slice($breakpoint-suffix, 1, 2)} {
-      @if ($breakpoint-value == 0) {
+// Column classes 
+@for $i from 1 through $bob-columns {
+  .col-start-#{$i}, .cs-#{$i} {
+    grid-column-start: $i;
+  }
+
+  .col-end-#{$i}, .ce-#{$i} {
+    grid-column-end: ($i + 1);
+  }
+}
+
+// Responsive column classes
+@for $i from 1 through $bob-columns {
+  @each $index, $attributes in $bob-breakpoints {
+    .col-start-#{$i}-#{map-deep-get($bob-breakpoints, $index, suffix)}, .cs-#{$i}-#{str-slice(map-deep-get($bob-breakpoints, $index, suffix), 1, 1)} {
+      @media (min-width: #{map-deep-get($bob-breakpoints, $index, min-width)}px) {
         grid-column-start: $i;
-      } @else {
-        @media (min-width: #{$breakpoint-value}px) {
-          grid-column-start: $i;
-        }
       }
     }
 
-    // Column end
-    .col-end-#{$i}#{$breakpoint-suffix}, .ce-#{$i}#{str-slice($breakpoint-suffix, 1, 2)} {
-      @if ($breakpoint-value == 0) {
-        grid-column-end: ($i +1);
-      } @else {
-        @media (min-width: #{$breakpoint-value}px) {
-          grid-column-end: ($i +1);
-        }
+    .col-end-#{$i}-#{map-deep-get($bob-breakpoints, $index, suffix)}, .ce-#{$i}-#{str-slice(map-deep-get($bob-breakpoints, $index, suffix), 1, 1)} {
+      @media (min-width: #{map-deep-get($bob-breakpoints, $index, min-width)}px) {
+        grid-column-end: ($i + 1);
       }
     }
   }
+}
 
-  // Row classes
-  @for $i from 1 through $bob-rows {
-    // Row start
-    .row-start-#{$i}#{$breakpoint-suffix}, .rs-#{$i}#{str-slice($breakpoint-suffix, 1, 2)} {
-      @if ($breakpoint-value == 0) {
+// Row classes
+@for $i from 1 through $bob-rows {
+  .row-start-#{$i}, .rs-#{$i} {
+    grid-row-start: $i;
+  }
+
+  .row-end-#{$i}, .re-#{$i} {
+    grid-row-end: ($i + 1);
+  }
+}
+
+// Responsive row classes
+@for $i from 1 through $bob-rows {
+  @each $index, $attributes in $bob-breakpoints {
+    .row-start-#{$i}-#{map-deep-get($bob-breakpoints, $index, suffix)}, .rs-#{$i}-#{str-slice(map-deep-get($bob-breakpoints, $index, suffix), 1, 1)} {
+      @media (min-width: #{map-deep-get($bob-breakpoints, $index, min-width)}px) {
         grid-row-start: $i;
-      } @else {
-        @media (min-width: #{$breakpoint-value}px) {
-          grid-row-start: $i;
-        }
       }
     }
 
-    // Row end
-    .row-end-#{$i}#{$breakpoint-suffix}, .re-#{$i}#{str-slice($breakpoint-suffix, 1, 2)} {
-      @if ($breakpoint-value == 0) {
-        grid-row-end: ($i +1);
-      } @else {
-        @media (min-width: #{$breakpoint-value}px) {
-          grid-row-end: ($i +1);
-        }
+    .row-end-#{$i}-#{map-deep-get($bob-breakpoints, $index, suffix)}, .re-#{$i}-#{str-slice(map-deep-get($bob-breakpoints, $index, suffix), 1, 1)} {
+      @media (min-width: #{map-deep-get($bob-breakpoints, $index, min-width)}px) {
+        grid-row-end: ($i + 1);
       }
     }
   }

@@ -13,13 +13,26 @@ $bob-rows: 12;
 // Define the grid gap
 $bob-gap: 1em;
 
-// Define the breakpoints
-// Key is the classe suffix
-// Value is the media queries min-width (in px)
+// Define the breakpoints settings
+// Add as much breakpoints as you need
+// Each entry must contains :
+// - the suffix -> used as classe prefix
+// - the min-width of the breakpoint (px)
+// - the container max-width (px)
 $bob-breakpoints: (
-  '': 0, // Keep this line as it
-  '-tablet': 768,
-  '-desktop': 992,
-  '-large': 1200
+  1: (
+    suffix: 'tablet',
+    min-width: 768,
+    container-max-width: 720
+  ),
+  2: (
+    suffix: 'desktop',
+    min-width: 992,
+    container-max-width: 960
+  ),
+  3: (
+    suffix: 'large',
+    min-width: 1200,
+    container-max-width: 1140
+  )
 );
-

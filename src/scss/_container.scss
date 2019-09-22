@@ -2,21 +2,15 @@
 * CONTAINER
 */
 
-$bob-container-medias: (
-  768: 720, 
-  992: 960, 
-  1200: 1140
-);
-
 .container, .container-full {
   width: 100%;
   margin: auto;
 }
 
 .container {
-  @each $breakpoint, $max-width in $bob-container-medias {
-    @media (min-width: #{$breakpoint}px) {
-      max-width: #{$max-width}px;
+  @each $index, $attributes in $bob-breakpoints {
+    @media (min-width: #{map-deep-get($bob-breakpoints, $index, min-width)}px) {
+      max-width: #{map-deep-get($bob-breakpoints, $index, container-max-width)}px;
     }
   }
 }

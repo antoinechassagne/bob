@@ -1,0 +1,9 @@
+/**
+* Get a key inside a map of maps
+*/
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
