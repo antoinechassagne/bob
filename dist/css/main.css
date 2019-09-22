@@ -81,13 +81,29 @@ table {
 /**
 * GRID
 */
+* {
+  box-sizing: border-box; }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 1em;
-  padding: 0 1em; }
+  padding: 1em; }
+  .grid + .grid {
+    padding-top: 0; }
 
 .no-gap {
+  grid-gap: 0;
+  padding: 0; }
+  .no-gap + .grid {
+    padding-top: 1em; }
+
+.no-external-gap {
+  padding: 0; }
+  .no-external-gap + .grid {
+    padding-top: 1em; }
+
+.no-internal-gap {
   grid-gap: 0; }
 
 .col-start-1, .cs-1 {

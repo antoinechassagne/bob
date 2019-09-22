@@ -2,15 +2,40 @@
 * GRID
 */
 
-// Grid
+* {
+  box-sizing: border-box;
+}
+
+// Grid classes
 .grid {
   display: grid;
   grid-template-columns: repeat($bob-columns, 1fr);
   grid-gap: $bob-gap;
-  padding: 0 $bob-gap;
+  padding: $bob-gap;
+
+  & + .grid {
+    padding-top: 0;
+  }
 }
 
 .no-gap {
+  grid-gap: 0;
+  padding: 0;
+
+  & + .grid {
+    padding-top: $bob-gap;
+  }
+}
+
+.no-external-gap {
+  padding: 0;
+
+  & + .grid {
+    padding-top: $bob-gap;
+  }
+}
+
+.no-internal-gap {
   grid-gap: 0;
 }
 
