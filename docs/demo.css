@@ -1,5 +1,6 @@
-section {
-  margin: 50px 0;
+body {
+  font-family: 'Lexend Deca', sans-serif;
+  padding: 50px 0;
 }
 
 div {
@@ -8,4 +9,12 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+ul {
+  padding: 2rem;
+}
+
+ul > li {
+  padding: 3px 0;
 }
