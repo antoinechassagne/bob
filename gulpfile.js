@@ -6,8 +6,8 @@ const rename = require('gulp-rename');
 
 gulp.task('clean', () => {
   return del([
-      'css/main.css',
-      'css/main.css.min'
+      'css/bob.css',
+      'css/bob.css.min'
   ]);
 });
 
@@ -18,7 +18,7 @@ gulp.task('compile', () => {
 });
 
 gulp.task('minify', () => {
-  return gulp.src('dist/css/main.css')
+  return gulp.src('dist/css/bob.css')
       .pipe(cssnano())
       .pipe(rename({
           suffix: '.min'
@@ -31,7 +31,7 @@ gulp.task('watch', () => {
 });
 
 gulp.task('docs', () => {
-  return gulp.src('dist/css/main.min.css')
+  return gulp.src('dist/css/bob.min.css')
       .pipe(gulp.dest('docs/'))
 });
 
