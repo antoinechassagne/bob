@@ -26,6 +26,10 @@ gulp.task('minify', () => {
       .pipe(gulp.dest('dist/css'))
 });
 
+gulp.task('watch', () => {
+  gulp.watch(['src/scss/**/*.scss'], gulp.series(['clean', 'compile', 'minify']));
+});
+
 gulp.task('docs', () => {
   return gulp.src('dist/css/main.min.css')
       .pipe(gulp.dest('docs/'))
