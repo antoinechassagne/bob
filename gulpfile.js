@@ -6,8 +6,8 @@ const rename = require('gulp-rename');
 
 gulp.task('clean', () => {
   return del([
-      'css/bob.css',
-      'css/bob.css.min'
+      'dist/css/bob.css',
+      'dist/css/bob.min.css'
   ]);
 });
 
