@@ -1,0 +1,172 @@
+/**
+* FLEXBOX
+*/
+
+// Display
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.none {
+  display: none;
+}
+
+// Direction
+.flex--row {
+  flex-direction: row;
+}
+
+.flex--column {
+  flex-direction: column;
+}
+
+// Wrap
+.flex--wrap {
+  flex-wrap: wrap;
+}
+
+.flex--nowrap {
+  flex-wrap: nowrap;
+}
+
+// Justify content
+.flex--justify-start {
+  justify-content: flex-start;
+}
+
+.flex--justify-end {
+  justify-content: flex-end;
+}
+
+.flex--justify-center {
+  justify-content: center;
+}
+
+.flex--justify-between {
+  justify-content: space-between;
+}
+
+.flex--justify-around {
+  justify-content: space-around;
+}
+
+.flex--justify-evenly {
+  justify-content: space-evenly;
+}
+
+// Align items
+.flex--align-start {
+  align-items: flex-start;
+}
+
+.flex--align-end {
+  align-items: flex-end;
+}
+
+.flex--align-center {
+  align-items: center;
+}
+
+.flex--align-baseline {
+  align-items: baseline;
+}
+
+.flex--align-stretch {
+  align-items: stretch;
+}
+
+// Responsive classes
+@each $index, $attributes in $bob-breakpoints {
+  @media (min-width: #{map-deep-get($bob-breakpoints, $index, min-width)}px) {
+    // Display
+    .flex--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .block--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      display: block;
+    }
+    
+    .inline-block--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      display: inline-block;
+    }
+    
+    .none--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      display: none;
+    }
+
+    // Direction
+    .flex--row--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      flex-direction: row;
+    }
+
+    .flex--column--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      flex-direction: column;
+    }
+
+    // Wrap
+    .flex--wrap--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      flex-wrap: wrap;
+    }
+
+    .flex--nowrap--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      flex-wrap: nowrap;
+    }
+
+    // Justify content
+    .flex--justify-start--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      justify-content: center;
+    }
+
+    .flex--justify-end--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      justify-content: flex-end;
+    }
+
+    .flex--justify-center--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      justify-content: center;
+    }
+
+    .flex--justify-between--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      justify-content: space-between;
+    }
+
+    .flex--justify-around--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      justify-content: space-around;
+    }
+
+    .flex--justify-evenly--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      justify-content: space-evenly;
+    }
+
+    // Align items
+    .flex--align-start--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      align-items: flex-start;
+    }
+
+    .flex--align-end--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      align-items: flex-end;
+    }
+
+    .flex--align-center--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      align-items: center;
+    }
+
+    .flex--align-baseline--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      align-items: baseline;
+    }
+
+    .flex--align-stretch--#{map-deep-get($bob-breakpoints, $index, suffix)} {
+      align-items: stretch;
+    }
+  }
+}

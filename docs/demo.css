@@ -6,9 +6,6 @@ body {
 div {
   min-height: 200px;
   background-color: lightblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 ul {
